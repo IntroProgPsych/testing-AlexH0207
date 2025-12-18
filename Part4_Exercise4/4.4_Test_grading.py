@@ -1,8 +1,6 @@
 import unittest
 from grading import grade_student
 
-
-class TestGradeStudent(unittest.TestCase):
     # TODO:
     # - Write tests for typical values:
     #   * 95 -> "A"
@@ -21,8 +19,24 @@ class TestGradeStudent(unittest.TestCase):
     # - Use assertEqual for grades and assertRaises for invalid scores.
     #
     # write your tests here
-    pass
-
+class TestGradeStudent(unittest.TestCase):
+    def test_grade_student(self):
+        self.assertEqual(grade_student(95),"A")
+        self.assertEqual(grade_student(85),"B")
+        self.assertEqual(grade_student(75),"C")
+        self.assertEqual(grade_student(65),"D")
+        self.assertEqual(grade_student(30),"F")
+        self.assertEqual(grade_student(90),"A")
+        self.assertEqual(grade_student(89),"B")
+        self.assertEqual(grade_student(80),"B")
+        self.assertEqual(grade_student(79),"C")
+        self.assertEqual(grade_student(70),"C")
+        self.assertEqual(grade_student(69),"D")
+        self.assertEqual(grade_student(60),"D")
+        self.assertEqual(grade_student(59),"F")
+        with self.assertRaises(ValueError):
+            grade_student(-1)
+            grade_student(101)
 
 if __name__ == "__main__":
     unittest.main()
