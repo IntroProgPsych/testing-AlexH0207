@@ -2,7 +2,6 @@
 import unittest
 from mathexercise import add
 
-class TestAddFunction(unittest.TestCase):
     # TODO:
     # - Write tests for:
     #   * adding two positive numbers
@@ -12,9 +11,15 @@ class TestAddFunction(unittest.TestCase):
     # - Use clear method names, e.g. test_add_positive_numbers, etc.
 
     # write your tests here:
-    pass
    
-
+class TestAddFunction(unittest.TestCase):
+    def test_add_positive_numbers(self):
+        self.assertEqual(add(1,2),3)
+    def test_add_negative_numbers(self):
+        self.assertEqual(add(-1,-2),-3)
+    def test_add_mixed_numbers(self):
+        self.assertEqual(add(-1,2),1)
+    pass
 
 if __name__ == "__main__":
     unittest.main()
